@@ -1,0 +1,5 @@
+IP: 84.201.161.82;
+name_taski: https://taskitestyandex.hopto.org/;
+name_kittygram: https://kittygramtestyandex.hopto.org/;
+login: admin;
+password: admin;
