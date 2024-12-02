@@ -1,10 +1,24 @@
 import os
 from pathlib import Path
-from decouple import config
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = config('SECRET_KEY', default='default_secret_key_for_tests')
+
+def load_env_file(env_path=".env"):
+    if os.path.exists(env_path):
+        with open(env_path) as env_file:
+            for line in env_file:
+                line = line.strip()
+                if not line or line.startswith("#"):
+                    continue
+                key, value = line.split("=", 1)
+                key, value = key.strip(), value.strip()
+                if key not in os.environ:
+                    os.environ[key] = value
+
+load_env_file()
+
+SECRET_KEY = os.getenv('SECRET_KEY', 'default_secret_key_for_tests')
 
 DEBUG = False
 
