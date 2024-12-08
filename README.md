@@ -1,4 +1,4 @@
-# infra_sprint1
+# CAT_BLOG
 
 
 Project Description: Our project is a platform where users can share photos of their cats. Here, everyone can create a profile for their pet, add their photo albums, share funny moments
